@@ -1,0 +1,73 @@
+.p-card-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.p-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.2rem;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(128, 128, 128, 0.463);
+}
+
+.dark-card {
+  background-color: #121212;
+  border: 1px solid rgba(171, 171, 171, 0.463);
+}
+
+.p-dark {
+  background-color: #383838 !important;
+}
+
+.p-inline-container {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: max-content;
+}
+
+.p-block {
+  display: inline-block;
+  background-color: rgb(215, 215, 215);
+}
+
+.p-line {
+  display: inline-block;
+  background-color: rgb(215, 215, 215);
+}
+
+.rounded {
+  border-radius: 100%;
+}
+
+@keyframes animate-shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+.light-animate-shimmer {
+  animation: animate-shimmer 1s linear infinite forwards;
+  background: linear-gradient(
+    to right,
+    rgb(215, 215, 215) 5%,
+    #eee 18%,
+    rgb(215, 215, 215) 33%
+  );
+  background-size: 1000px 1000px;
+}
+
+.dark-animate-shimmer {
+  animation: animate-shimmer 1s linear infinite forwards;
+  background: linear-gradient(to right, #383838 5%, #6d6c6c 18%, #383838 33%);
+  background-size: 1000px 1000px;
+}
