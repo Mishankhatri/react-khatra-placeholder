@@ -37,14 +37,17 @@ PCard is container for creating card placeholders.
 <PCard>{...children}</PCard>
 ```
 
-| Property | Type    | Required | Default value       | Description                                |
-| :------- | :------ | :------- | :------------------ | :----------------------------------------- |
-| w        | String  | yes      | null                | width of PCard                             |
-| h        | String  | yes      | null                | height of PCard                            |
-| br       | String  | no       | &quot;0.75rem&quot; | borderRadius of PCard                      |
-| gap      | String  | no       | null                | gap between children                       |
-| animate  | Boolean | no       | null                | to trigger shrimmer animation on childrens |
-| style    | Object  | no       | null                | for custom css styling                     |
+| Property    | Type    | Required | Default value       | Description                                |
+| :---------- | :------ | :------- | :------------------ | :----------------------------------------- |
+| w           | String  | yes      | null                | width of PCard                             |
+| h           | String  | yes      | null                | height of PCard                            |
+| br          | String  | no       | &quot;0.75rem&quot; | borderRadius of PCard                      |
+| gap         | String  | no       | null                | gap between children                       |
+| animateWave | Boolean | no       | null                | to trigger shrimmer animation on childrens |
+| animateGlow | Boolean | no       | null                | to trigger glow animation on childrens     |
+| style       | Object  | no       | null                | for custom css styling                     |
+
+> Note: using both animateWave and animateGlow stops animation.
 
 ## `PBlock`
 
@@ -147,8 +150,12 @@ For accessing `useTheme()` hook:
 
 `Profile Card` :
 
+<p align="">
+ <img width=auto height=auto src="./react-khatra-placeholder-imgs/profileCard.png" alt="#">
+</p>
+
 ```js
-<PCard w="400px" h="500px" br="12px" animate>
+<PCard w="400px" h="500px" br="12px" animateWave>
   <PBlock w="100%" h="150px" br="12px" align="center" />
   <PInLineContainer align="center">
     <PBlock
@@ -183,8 +190,12 @@ For accessing `useTheme()` hook:
 
 `Product Card` :
 
+<p align="">
+ <img width=auto height=auto src="./react-khatra-placeholder-imgs/productCard.png" alt="#">
+</p>
+
 ```js
-<PCard w="320px" h="400px" animate>
+<PCard w="320px" h="400px" animateWave>
   <PBlock h="50%" br="12px" />
   <PInLineContainer align="space-between">
     <PBlock w="30%" h="1.5rem" />
@@ -201,8 +212,12 @@ For accessing `useTheme()` hook:
 
 `List Card` :
 
+<p align="">
+ <img width=auto height=auto src="./react-khatra-placeholder-imgs/listCard.png" alt="#">
+</p>
+
 ```js
-<PCard w="400px" h="400px" animate>
+<PCard w="400px" h="400px" animateWave>
   <PInLineContainer gap="1rem">
     <PBlock w="80px" h="80px" br="12px" />
     <PInLineContainer w="60%" style={{ marginTop: "0.5rem" }}>
@@ -236,8 +251,12 @@ For accessing `useTheme()` hook:
 
 `Mobile View` :
 
+<p align="">
+ <img width=auto height=auto src="./react-khatra-placeholder-imgs/mobileView.png" alt="#">
+</p>
+
 ```js
-<PCard w="400px" h="720px" animate>
+<PCard w="400px" h="720px" animateGlow>
   <PInLineContainer align="space-between">
     <PBlock w="40%" h="2rem" />
     <PInLineContainer w="20%">
@@ -280,8 +299,12 @@ For accessing `useTheme()` hook:
 
 `Details Card` :
 
+<p align="">
+ <img width=auto height=auto src="./react-khatra-placeholder-imgs/detailCard.png" alt="#">
+</p>
+
 ```js
-<PCard w="800px" h="400px" gap="1rem" animate>
+<PCard w="800px" h="400px" gap="1rem" animateGlow>
   <PBlock h="100%" br="12px" />
   <PInLineContainer align="space-between">
     <PBlock w="50%" h="3rem" />
@@ -300,10 +323,14 @@ For accessing `useTheme()` hook:
 </PCard>
 ```
 
-`Details Card` :
+`Description Card` :
+
+<p align="">
+ <img width=auto height=auto src="./react-khatra-placeholder-imgs/descriptionCard.png" alt="#">
+</p>
 
 ```js
-<PCard w="400px" h="400px" animate>
+<PCard w="400px" h="400px" animateGlow>
   <PBlock h="50%" br="8px" />
   <PInLineContainer gap="0.5rem" br="3px">
     <PLine h="0.8rem" />

@@ -6,7 +6,16 @@ import { useTheme } from "./context/themeContext";
  * @param {*} { w, h, br = "0.75rem", animate, children, style, gap }
  * @return {*}
  */
-const PCard = ({ w, h, br = "0.75rem", animate, children, style, gap }) => {
+const PCard = ({
+  w,
+  h,
+  br = "0.75rem",
+  animateWave,
+  animateGlow,
+  children,
+  style,
+  gap,
+}) => {
   const pCardStyle = {
     width: w,
     height: h,
@@ -18,7 +27,7 @@ const PCard = ({ w, h, br = "0.75rem", animate, children, style, gap }) => {
   const { darkTheme } = useTheme();
   return (
     <>
-      <PAnimationContext.Provider value={{ animate }}>
+      <PAnimationContext.Provider value={{ animateWave, animateGlow }}>
         <div
           className={`p-card ${darkTheme ? "dark-card" : ""}`}
           style={pCardStyle}

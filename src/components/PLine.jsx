@@ -9,7 +9,7 @@ import { useTheme } from "./context/themeContext";
  * @return {*}
  */
 const PLine = ({ w = "100%", h = "1rem", br, align, style }) => {
-  const { animate } = useAnimation();
+  const { animateWave, animateGlow } = useAnimation();
   const { borderRadius } = useInlineContext();
   let pLineStyle = {
     width: w,
@@ -22,8 +22,10 @@ const PLine = ({ w = "100%", h = "1rem", br, align, style }) => {
   return (
     <p
       className={`p-line ${
-        animate && darkTheme ? "dark-animate-shimmer" : ""
-      } ${animate && !darkTheme ? "light-animate-shimmer" : ""} ${
+        !animateGlow && animateWave && darkTheme ? "dark-animate-shimmer" : ""
+      } ${
+        !animateGlow && animateWave && !darkTheme ? "light-animate-shimmer" : ""
+      } ${!animateWave && animateGlow ? "glow-anim" : ""} ${
         darkTheme ? "p-dark" : ""
       }`}
       style={pLineStyle}

@@ -48,11 +48,21 @@
 
 @keyframes animate-shimmer {
   0% {
-    background-position: -200px 0;
+    background-position: -500px 0;
   }
   100% {
-    background-position: 800px 0;
+    background-position: 500px 0;
   }
+}
+
+@keyframes glow {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.glow-anim {
+  animation: glow 1.5s ease-in-out infinite;
 }
 
 .light-animate-shimmer {
@@ -63,11 +73,11 @@
     #eee 18%,
     rgb(215, 215, 215) 33%
   );
-  background-size: 1000px 1000px;
+  background-size: 1000px 300px;
 }
 
 .dark-animate-shimmer {
   animation: animate-shimmer 1s linear infinite forwards;
   background: linear-gradient(to right, #383838 5%, #6d6c6c 18%, #383838 33%);
-  background-size: 1000px 1000px;
+  background-size: 1000px 300px;
 }

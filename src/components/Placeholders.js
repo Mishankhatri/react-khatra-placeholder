@@ -10,7 +10,7 @@ const PlaceholderTest = () => {
     <>
       <PCardContainer>
         {/* ProfileCard */}
-        <PCard w="400px" h="500px" br="12px" animate>
+        <PCard w="400px" h="500px" br="12px" animateWave>
           <PBlock w="100%" h="150px" br="12px" align="center" />
           <PInLineContainer align="center">
             <PBlock
@@ -42,7 +42,7 @@ const PlaceholderTest = () => {
           </PInLineContainer>
         </PCard>
         {/* ProductCard */}
-        <PCard w="320px" h="400px" animate>
+        <PCard w="320px" h="400px" animateWave>
           <PBlock h="50%" br="12px" />
           <PInLineContainer align="space-between">
             <PBlock w="30%" h="1.5rem" />
@@ -56,7 +56,7 @@ const PlaceholderTest = () => {
           <PBlock w="30%" h="1.8rem" />
         </PCard>
         {/* ListCard */}
-        <PCard w="400px" h="400px" animate>
+        <PCard w="400px" h="400px" animateGlow>
           <PInLineContainer gap="1rem">
             <PBlock w="80px" h="80px" br="12px" />
             <PInLineContainer w="60%" style={{ marginTop: "0.5rem" }}>
@@ -87,7 +87,7 @@ const PlaceholderTest = () => {
           </PInLineContainer>
         </PCard>
         {/* MobileCard */}
-        <PCard w="400px" h="720px" animate>
+        <PCard w="400px" h="720px" animateWave>
           <PInLineContainer align="space-between">
             <PBlock w="40%" h="2rem" />
             <PInLineContainer w="20%">
@@ -127,7 +127,7 @@ const PlaceholderTest = () => {
           </PInLineContainer>
         </PCard>
         {/* DetailCard */}
-        <PCard w="800px" h="400px" gap="1rem" animate>
+        <PCard w="800px" h="400px" gap="1rem" animateGlow>
           <PBlock h="100%" br="12px" />
           <PInLineContainer align="space-between">
             <PBlock w="50%" h="3rem" />
@@ -145,7 +145,7 @@ const PlaceholderTest = () => {
           </PInLineContainer>
         </PCard>
         {/* DescriptionCard */}
-        <PCard w="400px" h="400px" animate>
+        <PCard w="400px" h="400px" animateGlow>
           <PBlock h="50%" br="8px" />
           <PInLineContainer gap="0.5rem" br="3px">
             <PLine h="0.8rem" />

@@ -7,7 +7,7 @@ import { useTheme } from "./context/themeContext";
  * @return {*}
  */
 const PBlock = ({ w = "100%", h = "100%", align, rounded, br, style }) => {
-  const { animate } = useAnimation();
+  const { animateWave, animateGlow } = useAnimation();
   const pBlockStyle = {
     width: w,
     height: h,
@@ -19,8 +19,10 @@ const PBlock = ({ w = "100%", h = "100%", align, rounded, br, style }) => {
   return (
     <div
       className={`p-block ${
-        animate && darkTheme ? "dark-animate-shimmer" : ""
-      } ${animate && !darkTheme ? "light-animate-shimmer" : ""} ${
+        !animateGlow && animateWave && darkTheme ? "dark-animate-shimmer" : ""
+      } ${
+        !animateGlow && animateWave && !darkTheme ? "light-animate-shimmer" : ""
+      } ${!animateWave && animateGlow ? "glow-anim" : ""} ${
         rounded ? "rounded" : ""
       } ${darkTheme ? "p-dark" : ""}`}
       style={pBlockStyle}

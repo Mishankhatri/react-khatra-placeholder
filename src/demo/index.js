@@ -9,11 +9,25 @@ import { useState } from "react";
 
 const PlaceHolderDemo = () => {
   const { darkTheme, handleTheme } = useTheme();
-  const [activeAnimation, setActiveAnimation] = useState(true);
+  const [waveAnimation, setWaveAnimation] = useState(false);
+  const [glowAnimation, setGlowAnimation] = useState(false);
+
+  const activateWave = () => {
+    setWaveAnimation(true);
+    setGlowAnimation(false);
+  };
+  const activateGlow = () => {
+    setGlowAnimation(true);
+    setWaveAnimation(false);
+  };
+  const clearAnimation = () => {
+    setGlowAnimation(false);
+    setWaveAnimation(false);
+  };
   return (
     <>
       <div style={{ margin: "0 5rem" }}>
-        <h1 style={{ textAlign: "center" }}>React Khatra Placeholder</h1>
+        <h1 style={{ textAlign: "center" }}>"React Khatra Placeholder"</h1>
         <button
           onClick={() => handleTheme(!darkTheme)}
           style={{
@@ -29,7 +43,7 @@ const PlaceHolderDemo = () => {
           Toggle Theme
         </button>
         <button
-          onClick={() => setActiveAnimation(!activeAnimation)}
+          onClick={() => activateWave()}
           style={{
             padding: "0.25rem 0.5rem",
             border: "none",
@@ -39,12 +53,44 @@ const PlaceHolderDemo = () => {
             backgroundColor: "white",
           }}
         >
-          Toggle Animation
+          Wave Animation
+        </button>
+        <button
+          onClick={() => activateGlow()}
+          style={{
+            padding: "0.25rem 0.5rem",
+            border: "none",
+            borderRadius: "5px",
+            margin: "2rem",
+            cursor: "pointer",
+            backgroundColor: "white",
+          }}
+        >
+          Glow Animation
+        </button>
+        <button
+          onClick={() => clearAnimation()}
+          style={{
+            padding: "0.25rem 0.5rem",
+            border: "none",
+            borderRadius: "5px",
+            margin: "2rem",
+            cursor: "pointer",
+            backgroundColor: "white",
+          }}
+        >
+          Clear Animation
         </button>
         <PCardContainer>
           <div>
             <h2>Profile Card</h2>
-            <PCard w="400px" h="500px" br="12px" animate={activeAnimation}>
+            <PCard
+              w="400px"
+              h="500px"
+              br="12px"
+              animateWave={waveAnimation}
+              animateGlow={glowAnimation}
+            >
               <PBlock w="100%" h="150px" br="12px" align="center" />
               <PInLineContainer align="center">
                 <PBlock
@@ -78,7 +124,12 @@ const PlaceHolderDemo = () => {
           </div>
           <div>
             <h2>Product Card</h2>
-            <PCard w="320px" h="400px" animate={activeAnimation}>
+            <PCard
+              w="320px"
+              h="400px"
+              animateWave={waveAnimation}
+              animateGlow={glowAnimation}
+            >
               <PBlock h="50%" br="12px" />
               <PInLineContainer align="space-between">
                 <PBlock w="30%" h="1.5rem" />
@@ -95,7 +146,12 @@ const PlaceHolderDemo = () => {
 
           <div>
             <h2>ListCard</h2>
-            <PCard w="400px" h="400px" animate={activeAnimation}>
+            <PCard
+              w="400px"
+              h="400px"
+              animateWave={waveAnimation}
+              animateGlow={glowAnimation}
+            >
               <PInLineContainer gap="1rem">
                 <PBlock w="80px" h="80px" br="12px" />
                 <PInLineContainer w="60%" style={{ marginTop: "0.5rem" }}>
@@ -129,7 +185,12 @@ const PlaceHolderDemo = () => {
 
           <div>
             <h2> Mobile View</h2>
-            <PCard w="400px" h="720px" animate={activeAnimation}>
+            <PCard
+              w="400px"
+              h="720px"
+              animateWave={waveAnimation}
+              animateGlow={glowAnimation}
+            >
               <PInLineContainer align="space-between">
                 <PBlock w="40%" h="2rem" />
                 <PInLineContainer w="20%">
@@ -168,7 +229,13 @@ const PlaceHolderDemo = () => {
 
           <div>
             <h2>DetailView Card</h2>
-            <PCard w="800px" h="400px" gap="1rem" animate={activeAnimation}>
+            <PCard
+              w="800px"
+              h="400px"
+              gap="1rem"
+              animateWave={waveAnimation}
+              animateGlow={glowAnimation}
+            >
               <PBlock h="100%" br="12px" />
               <PInLineContainer align="space-between">
                 <PBlock w="50%" h="3rem" />
@@ -189,7 +256,12 @@ const PlaceHolderDemo = () => {
 
           <div>
             <h2>Description Card</h2>
-            <PCard w="400px" h="400px" animate={activeAnimation}>
+            <PCard
+              w="400px"
+              h="400px"
+              animateWave={waveAnimation}
+              animateGlow={glowAnimation}
+            >
               <PBlock h="50%" br="8px" />
               <PInLineContainer gap="0.5rem" br="3px">
                 <PLine h="0.8rem" />
