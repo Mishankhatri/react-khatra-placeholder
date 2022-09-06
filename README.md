@@ -1,22 +1,64 @@
 # [React Khatra Placeholder](https://mishankhatri.github.io/react-khatra-placeholder)
 
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![License: GPL v3](https://img.shields.io/badge/License-MIT-blue.svg)]()
+
 ## A react component library for creating skeleton placeholders.
 
-## [Demo here](https://mishankhatri.github.io/react-khatra-placeholder)
+<p align="center">
+ <img width=auto height=auto src="./react-khatra-placeholder-imgs/showLogo.png" alt="#">
+</p>
 
-## Components Structure:
+## Installation
 
-```js
-<PCardContainer>
-    <PCard>
-        <PBlock/>
-        <PInlineContainer>
-            <PLine/>
-            <PLine/>
-            <PLine/>
-        </PInlineContainer>
-    </PCard>
-<PCardContainer/>
+```bash
+  npm install react-khatra-placeholder
+```
+
+## Requirement
+
+- [React.js](https://reactjs.org) version 16 or above
+
+<br/>
+
+# Quick Start
+
+## After installation
+
+Import necessary components from the react-khatra-placeholder.
+
+```jsx
+import {
+  PCardContainer,
+  PCard,
+  PBlock,
+  PInlineContainer,
+  PLine,
+} from "react-khatra-placeholder";
+```
+
+```jsx
+export const YourFirstPlaceholder = () => {
+  return (
+    <>
+      {/* to hold more than one PCard. */}
+      <PCardContainer>
+        {/* base component of placeholder, control animation of placeholder from here.*/}
+        <PCard w="400px" h="400px" animateWave>
+          {/* creates rectangular block of given height and border radius.*/}
+          <PBlock h="50%" br="8px" />
+          {/* base component for creating paragraph lines.*/}
+          <PInLineContainer gap="0.1rem" br="3px">
+            <PLine h="0.8rem" /> {/* creates lines, just like in paragraphs.*/}
+            <PLine w="70%" h="0.8rem" />
+            <PLine w="80%" h="0.8rem" />
+          </PInLineContainer>
+          <PBlock w="30%" h="2rem" br="3px" />
+        </PCard>
+      </PCardContainer>
+    </>
+  );
+};
 ```
 
 # Components
@@ -31,7 +73,7 @@ PCardContainer is container to hold one or more <PCard/>.
 
 ## `PCard`
 
-PCard is container for creating card placeholders.
+PCard is base container for creating card placeholders.<br/> Only place to control animations, either animateWave or animateGlow.
 
 ```js
 <PCard>{...children}</PCard>
@@ -51,7 +93,7 @@ PCard is container for creating card placeholders.
 
 ## `PBlock`
 
-PBlock is used for creating placeholders for titles, images and titles.
+PBlock is used for creating placeholders for titles ,images and badges.
 
 ```js
 <PBlock />
@@ -126,24 +168,37 @@ Creating a product card.
 
 <br>
 
-# `Themes`
+# Themes
+
+## ThemeContext
 
 Defaults to light theme.
-For passing Dark theme state: use `<ThemeContext.Provider value={{darkTheme,handleTheme:setDarkTheme}}>` on top parent component.
-<br>
+For passing Dark theme state:<br/>
+Use `<ThemeContext.Provider value={{darkTheme,handleTheme:setDarkTheme}}>` on top parent component.<br/>
+
+```jsx
+//for providing darkTheme state and handler globally
+import { ThemeContext } from "react-khatra-placeholder";
+
+const [darkTheme, setDarkTheme] = useState(false);
+return (
+  <ThemeContext.Provider value={{ darkTheme, handleTheme: setDarkTheme }}>
+    <YourTopParentComponent />
+  </ThemeContext.Provider>
+);
+```
+
+> Note: Make sure context value has same keys {darkTheme: Boolean state, handleTheme: state setter}
+
+## useTheme()
+
 For accessing `useTheme()` hook:
 
-```js
-//for providing darkTheme state and handler globally
-...
-...
-  const [darkTheme, setDarkTheme] = useState(false);
-  return (
-    <ThemeContext.Provider value={{ darkTheme, handleTheme: setDarkTheme }}>
-      <YourTopParentComponent />
-    </ThemeContext.Provider>
-  );
-...
+```jsx
+import { useTheme } from "react-khatra-placeholder";
+
+const { darkTheme, handleTheme } = useTheme();
+return <button onClick={() => handleTheme(!darkTheme)}>Toggle Theme</button>;
 ```
 
 # `Cards used in Demo`

@@ -1,3 +1,4 @@
+import React from "react";
 import { PAnimationContext } from "./context/animationContext";
 import { useTheme } from "./context/themeContext";
 
