@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 
-import { ThemeContext } from "./components/context/themeContext";
+import { ThemeContext } from "./lib";
 import PlaceHolderDemo from "./demo";
 
 function App() {

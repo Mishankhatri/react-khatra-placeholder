@@ -1,10 +1,11 @@
-import "../components/assets/placeholders.css";
-import PCard from "../components/PCard";
-import PCardContainer from "../components/PCardContainer";
-import PLine from "../components/PLine";
-import PBlock from "../components/PBlock";
-import PInLineContainer from "../components/PInlineContainer";
-import { useTheme } from "../components/context/themeContext";
+import {
+  useTheme,
+  PCardContainer,
+  PCard,
+  PBlock,
+  PInLineContainer,
+  PLine,
+} from "../lib";
 import { useState } from "react";
 
 const PlaceHolderDemo = () => {
