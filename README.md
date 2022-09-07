@@ -15,6 +15,12 @@
   npm install react-khatra-placeholder
 ```
 
+## Documentation
+
+### [React Khatra Placeholder Documentation](https://mishankhatri.github.io/react-khatra-placeholder-docs)
+
+<br/>
+
 ## Requirement
 
 - [React.js](https://reactjs.org) version 16 or above
@@ -117,17 +123,17 @@ Without PInlineContainer, PLine cannot be rendered.
 <PInlineContainer>{...children}</PInlineContainer>
 ```
 
-| Property   | Type   | Required | Default value           | Description                                                                                |
-| :--------- | :----- | :------- | :---------------------- | :----------------------------------------------------------------------------------------- |
-| w          | String | no       | &quot;100%&quot;        | width of PInlineContainer                                                                  |
-| h          | String | no       | &quot;fit-content&quot; | height of PInlineContainer                                                                 |
-| br         | String | no       | &quot;5px&quot;         | borderRadius for each children                                                             |
-| gap        | String | no       | &quot;0.5rem&quot;      | gap between chilrens PInlineContainer                                                      |
-| align      | String | no       | null                    | to align-self inside PInlineContainer, takes either of values flex-start,flex-end & center |
-| rows       | Number | no       | null                    | to create given number of rows of PLines                                                   |
-| rowsWidth  | String | no       | null                    | to specify width for given number of 'rows'                                                |
-| rowsHeight | String | no       | null                    | to specify height for given number of 'rows'                                               |
-| style      | Object | no       | null                    | for custom css styling                                                                     |
+| Property   | Type   | Required | Default value           | Description                                                                                                        |
+| :--------- | :----- | :------- | :---------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| w          | String | no       | &quot;100%&quot;        | width of PInlineContainer                                                                                          |
+| h          | String | no       | &quot;fit-content&quot; | height of PInlineContainer                                                                                         |
+| br         | String | no       | &quot;5px&quot;         | borderRadius for each children                                                                                     |
+| gap        | String | no       | &quot;0.5rem&quot;      | gap between chilrens PInlineContainer                                                                              |
+| align      | String | no       | null                    | to align PLines,PBlock inside PInlineContainer takes either of space-between, space-around, space-evenly & centerr |
+| rows       | Number | no       | null                    | to create given number of rows of PLines                                                                           |
+| rowsWidth  | String | no       | null                    | to specify width for given number of 'rows'                                                                        |
+| rowsHeight | String | no       | null                    | to specify height for given number of 'rows'                                                                       |
+| style      | Object | no       | null                    | for custom css styling                                                                                             |
 
 ## `PLine`
 
@@ -402,4 +408,4 @@ return <button onClick={() => handleTheme(!darkTheme)}>Toggle Theme</button>;
 
 ## Contribution
 
-Feel free contribute. Happy Coding!
+Feel free to contribute. Happy Coding!
