@@ -1,7 +1,7 @@
 {
   "homepage": "https://mishankhatri.github.io/react-khatra-placeholder-docs",
   "name": "react-khatra-placeholder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
