@@ -123,7 +123,7 @@ KhatraPlaceholder is the base container to hold your content, maintain your load
 | Property          | Type            | Required | Default value | Description                                                                                                                                          |
 | :---------------- | :-------------- | :------- | :------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | isLoading         | Boolean         | no       | false         | state to either hide or show content                                                                                                                 |
-| delay             | Number          | no       | 0             | to add delay in between changing state from loading to loaded.(Use to omit fast flicker in faster network devices.)                                  |
+| delay             | Number          | no       | 0             | to add delay (in milliseconds) between changing state from loading to loaded.(Use to omit fast flicker in faster network devices.)                   |
 | customPlaceholder | React Component | no       | null          | placeholder to show when content is loading                                                                                                          |
 | type              | String          | no       | null          | type of builtin placeholders provided by the library either of "ListMediaPlaceholder","ProductPlaceholder","ImagePlaceholder","ParagraphPlaceholder" |
 | animateWave       | Boolean         | no       | null          | to trigger shrimmer animation on placeholders                                                                                                        |
@@ -343,8 +343,13 @@ For accessing `useTheme()` hook:
 ```jsx
 import { useTheme } from "react-khatra-placeholder";
 
-const { darkTheme, handleTheme } = useTheme();
-return <button onClick={() => handleTheme(!darkTheme)}>Toggle Theme</button>;
+import { useTheme } from "react-khatra-placeholder";
+
+//example for toggle theme button
+const ToggleTheme = () => {
+  const { darkTheme, handleTheme } = useTheme();
+  return <button onClick={() => handleTheme(!darkTheme)}>Toggle Theme</button>;
+};
 ```
 
 # `Custom Cards used in Demo`
