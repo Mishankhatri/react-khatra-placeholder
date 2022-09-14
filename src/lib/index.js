@@ -1,17 +1,32 @@
-import "./components/assets/placeholders.css";
-import PCard from "./components/PCard";
-import PCardContainer from "./components/PCardContainer";
-import PLine from "./components/PLine";
-import PBlock from "./components/PBlock";
-import PInLineContainer from "./components/PInlineContainer";
-import { useTheme, ThemeContext } from "./components/context/themeContext";
-
-export {
+import "./assets/placeholders.css";
+import {
+  KhatraPlaceholder,
   PCardContainer,
   PCard,
   PBlock,
   PInLineContainer,
   PLine,
-  ThemeContext,
+  PThemeProvider,
+} from "./components/base";
+import {
+  ParagraphPlaceholder,
+  ImagePlaceholder,
+  ListMediaPlaceholder,
+  ProductPlaceholder,
+} from "./components/builtinPlaceholders";
+import { useTheme } from "./context";
+
+export {
+  KhatraPlaceholder,
+  PCardContainer,
+  PCard,
+  PBlock,
+  PInLineContainer,
+  PLine,
+  PThemeProvider,
   useTheme,
+  ParagraphPlaceholder,
+  ImagePlaceholder,
+  ListMediaPlaceholder,
+  ProductPlaceholder,
 };

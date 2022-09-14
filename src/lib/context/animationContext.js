@@ -10,7 +10,9 @@ export const useAnimation = () => {
   const context = useContext(PAnimationContext);
 
   if (context === undefined) {
-    throw new Error("useAnimation() must be called inside <PCard/> component.");
+    throw new Error(
+      "useAnimation() must be called childrens of <PCard/> component."
+    );
   }
   return context;
 };

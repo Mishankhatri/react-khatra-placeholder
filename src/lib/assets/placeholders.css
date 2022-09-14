@@ -10,20 +10,18 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 0.2rem;
   padding: 1rem;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgba(128, 128, 128, 0.463);
+  background-color: var(--lightMode-bg);
 }
 
 .dark-card {
-  background-color: #121212;
-  border: 1px solid rgba(171, 171, 171, 0.463);
+  background-color: var(--darkMode-bg);
 }
 
 .p-dark {
-  background-color: #383838 !important;
+  background-color: var(--darkMode) !important;
 }
 
 .p-inline-container {
@@ -34,12 +32,12 @@
 
 .p-block {
   display: inline-block;
-  background-color: rgb(215, 215, 215);
+  background-color: var(--lightMode);
 }
 
 .p-line {
   display: inline-block;
-  background-color: rgb(215, 215, 215);
+  background-color: var(--lightMode);
 }
 
 .rounded {
@@ -57,27 +55,31 @@
 
 @keyframes glow {
   50% {
-    opacity: 0.5;
+    opacity: 0.65;
   }
 }
 
 .glow-anim {
   animation: glow 1.5s ease-in-out infinite;
 }
-
 .light-animate-shimmer {
   animation: animate-shimmer 1s linear infinite forwards;
   background: linear-gradient(
     to right,
-    rgb(215, 215, 215) 5%,
-    #eee 18%,
-    rgb(215, 215, 215) 33%
+    var(--lightMode) 5%,
+    var(--lightMode-shine) 18%,
+    var(--lightMode) 33%
   );
   background-size: 1000px 300px;
 }
 
 .dark-animate-shimmer {
   animation: animate-shimmer 1s linear infinite forwards;
-  background: linear-gradient(to right, #383838 5%, #6d6c6c 18%, #383838 33%);
+  background: linear-gradient(
+    to right,
+    var(--darkMode) 5%,
+    var(--darkMode-shine) 18%,
+    var(--darkMode) 33%
+  );
   background-size: 1000px 300px;
 }

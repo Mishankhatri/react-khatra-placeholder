@@ -1,17 +1,24 @@
+import { useState } from "react";
+
 import {
-  useTheme,
   PCardContainer,
   PCard,
   PBlock,
   PInLineContainer,
   PLine,
+  KhatraPlaceholder,
+  useTheme,
 } from "../lib";
-import { useState } from "react";
+import {
+  ListMediaPlaceholder,
+  ImagePlaceholder,
+} from "../lib/components/builtinPlaceholders";
 
 const PlaceHolderDemo = () => {
   const { darkTheme, handleTheme } = useTheme();
   const [waveAnimation, setWaveAnimation] = useState(false);
   const [glowAnimation, setGlowAnimation] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const activateWave = () => {
     setWaveAnimation(true);
@@ -27,8 +34,22 @@ const PlaceHolderDemo = () => {
   };
   return (
     <>
-      <div style={{ margin: "0 5rem" }}>
-        <h1 style={{ textAlign: "center" }}>"React Khatra Placeholder"</h1>
+      <div style={{ marginLeft: "5rem", marginRight: "5rem" }}>
+        <h1 style={{ textAlign: "center" }}>"React Khatra Placeholder Test"</h1>
+        <button
+          onClick={() => setIsLoading(!isLoading)}
+          style={{
+            padding: "0.25rem 0.5rem",
+            border: "none",
+            borderRadius: "5px",
+            margin: "2rem",
+            cursor: "pointer",
+            backgroundColor: "white",
+            marginTop: "1rem",
+          }}
+        >
+          Toggle loading
+        </button>
         <button
           onClick={() => handleTheme(!darkTheme)}
           style={{
@@ -82,6 +103,76 @@ const PlaceHolderDemo = () => {
         >
           Clear Animation
         </button>
+        <KhatraPlaceholder
+          isLoading={isLoading}
+          style={{
+            backgroundColor: "orange",
+            color: "brown",
+            padding: "1rem",
+            width: "50%",
+            borderRadius: "0.75rem",
+          }}
+          animateGlow={glowAnimation}
+          animateWave={waveAnimation}
+          type={"ProductPlaceholder"}
+        >
+          <div>Content without delay</div>
+          <div>Content without delay</div>
+        </KhatraPlaceholder>
+        <br />
+        <KhatraPlaceholder
+          isLoading={isLoading}
+          type={"ParagraphPlaceholder"}
+          delay={300}
+          animateGlow={glowAnimation}
+          animateWave={waveAnimation}
+          style={{
+            backgroundColor: "lightgreen",
+            color: "green",
+            padding: "1rem",
+            width: "50%",
+            borderRadius: "0.75rem",
+          }}
+        >
+          <div>Content with delay</div>
+          <div>Content with delay</div>
+        </KhatraPlaceholder>
+        <br />
+        <KhatraPlaceholder
+          isLoading={isLoading}
+          customPlaceholder={<ListMediaPlaceholder />}
+          delay={300}
+          animateGlow={glowAnimation}
+          animateWave={waveAnimation}
+          style={{
+            backgroundColor: "orange",
+            color: "brown",
+            padding: "1rem",
+            width: "50%",
+            borderRadius: "0.75rem",
+          }}
+        >
+          <div>Content with delay</div>
+          <div>Content with delay</div>
+        </KhatraPlaceholder>
+        <br />
+        <KhatraPlaceholder
+          isLoading={isLoading}
+          customPlaceholder={<ImagePlaceholder />}
+          delay={300}
+          animateGlow={glowAnimation}
+          animateWave={waveAnimation}
+          style={{
+            backgroundColor: "lightgreen",
+            color: "green",
+            padding: "1rem",
+            width: "50%",
+            borderRadius: "0.75rem",
+          }}
+        >
+          <div>Content with delay</div>
+          <div>Content with delay</div>
+        </KhatraPlaceholder>
         <PCardContainer>
           <div>
             <h2>Profile Card</h2>
@@ -93,7 +184,7 @@ const PlaceHolderDemo = () => {
               animateGlow={glowAnimation}
             >
               <PBlock w="100%" h="150px" br="12px" align="center" />
-              <PInLineContainer align="center">
+              <PInLineContainer justify="center">
                 <PBlock
                   w="100px"
                   h="100px"
@@ -110,12 +201,12 @@ const PlaceHolderDemo = () => {
                 <PBlock w="60%" h="0.8rem" align="center" />
                 <PBlock w="60%" h="0.8rem" align="center" />
               </PInLineContainer>
-              <PInLineContainer align="center">
+              <PInLineContainer justify="center">
                 <PBlock w="40%" h="2rem" />
                 <PBlock w="40%" h="2rem" />
                 <PBlock w="10%" h="2rem" />
               </PInLineContainer>
-              <PInLineContainer gap="0.8rem" align="center">
+              <PInLineContainer gap="0.8rem" justify="center">
                 <PLine w="20%" h="100px" />
                 <PLine w="20%" h="100px" />
                 <PLine w="20%" h="100px" />
@@ -132,7 +223,7 @@ const PlaceHolderDemo = () => {
               animateGlow={glowAnimation}
             >
               <PBlock h="50%" br="12px" />
-              <PInLineContainer align="space-between">
+              <PInLineContainer justify="space-between">
                 <PBlock w="30%" h="1.5rem" />
                 <PBlock w="20%" h="1.5rem" />
               </PInLineContainer>
@@ -187,19 +278,18 @@ const PlaceHolderDemo = () => {
           <div>
             <h2> Mobile View</h2>
             <PCard
-              w="400px"
-              h="720px"
+              h="600px"
               animateWave={waveAnimation}
               animateGlow={glowAnimation}
             >
-              <PInLineContainer align="space-between">
+              <PInLineContainer justify="space-between">
                 <PBlock w="40%" h="2rem" />
                 <PInLineContainer w="20%">
                   <PBlock w="2rem" h="2rem" rounded />
                   <PBlock w="2rem" h="2rem" rounded />
                 </PInLineContainer>
               </PInLineContainer>
-              <PInLineContainer align="space-between">
+              <PInLineContainer justify="space-between">
                 <PBlock w="4rem" h="2rem" />
                 <PBlock w="4rem" h="2rem" />
                 <PBlock w="4rem" h="2rem" />
@@ -238,7 +328,7 @@ const PlaceHolderDemo = () => {
               animateGlow={glowAnimation}
             >
               <PBlock h="100%" br="12px" />
-              <PInLineContainer align="space-between">
+              <PInLineContainer justify="space-between">
                 <PBlock w="50%" h="3rem" />
                 <PInLineContainer w="30%">
                   <PBlock w="3rem" h="3rem" rounded />
@@ -269,8 +359,8 @@ const PlaceHolderDemo = () => {
                 <PLine w="70%" h="0.8rem" />
                 <PLine w="80%" h="0.8rem" />
               </PInLineContainer>
+              <PInLineContainer rows={3} rowsHeight="0.8rem" />
               <PBlock w="30%" h="1.8rem" br="3px" />
-              <PInLineContainer rows={3} rowsHeight="0.5rem" />
             </PCard>
           </div>
         </PCardContainer>

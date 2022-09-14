@@ -1,15 +1,18 @@
 import "./App.css";
-import { useState } from "react";
-
-import { ThemeContext } from "./lib";
+import { PThemeProvider } from "./lib/components/base";
 import PlaceHolderDemo from "./demo";
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
   return (
-    <ThemeContext.Provider value={{ darkTheme, handleTheme: setDarkTheme }}>
+    <PThemeProvider
+      lightModeBackground="orange"
+      lightModeColor="brown"
+      darkModeBackground="lightgreen"
+      darkModeColor="green"
+      darkModeShine="lightblue"
+    >
       <PlaceHolderDemo />
-    </ThemeContext.Provider>
+    </PThemeProvider>
   );
 }
 
