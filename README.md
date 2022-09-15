@@ -343,8 +343,6 @@ For accessing `useTheme()` hook:
 ```jsx
 import { useTheme } from "react-khatra-placeholder";
 
-import { useTheme } from "react-khatra-placeholder";
-
 //example for toggle theme button
 const ToggleTheme = () => {
   const { darkTheme, handleTheme } = useTheme();
